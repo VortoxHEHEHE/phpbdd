@@ -18,5 +18,6 @@ $sql = 'INSERT INTO movies VALUES('.$ID.',"'.$TITRE.'","'.$GENRE.'",'.$ANNEE.')'
 $retour = $base->query($sql);
 
 ?>
+</br><a href="index.html">Retour à la page principale</a>
 </body>
 </html>
