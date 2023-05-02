@@ -1,21 +1,22 @@
 <html>
 <body>
-<h1>Reception des données du formulaire</h1>
+<h1>Mon exercice PHP</h1>
+
+
 <?php
-
-$ID = $_GET['id'];
-$TITRE= $_GET['titre'];
-$GENRE = $_GET['genre'];
-$ANNEE = $_GET['annee'];
-
-echo $ID ." ".$TITRE." ".$GENRE." ".$ANNEE; 
+//Lister le contenu de la table FILMS
 
 //1° - Connexion à la BDD
-$base = new PDO('mysql:host=localhost; dbname=id20215400_cnamgreta', 'id20215400_boris', '=nq^^=vKz?FRiz7-');
+$base = new PDO('mysql:host=localhost; dbname=id20173216_phpbdd', 'id20173216_moviesliste', 'jvf0%+F=(Z{\<xO@');
 $base->exec("SET CHARACTER SET utf8");
-$sql = 'INSERT INTO movies VALUES('.$ID.',"'.$TITRE.'","'.$GENRE.'",'.$ANNEE.')';
+
 //2° - Préparation de requette et execution
-$retour = $base->query($sql);
+$retour = $base->query('SELECT * FROM movies;');
+
+//3° - Lecture du resultat de la requette
+while ($data = $retour->fetch()){
+echo $data['id']." ".$data['titre']." ".$data['genre']." ".$data['annee']."</br>";
+}
 
 ?>
 </br><a href="index.html">Retour à la page principale</a>
