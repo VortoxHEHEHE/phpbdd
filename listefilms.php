@@ -7,7 +7,7 @@
 //Lister le contenu de la table FILMS
 
 //1° - Connexion à la BDD
-$base = new PDO('mysql:host=localhost; dbname=id20215400_cnamgreta', 'id20215400_boris', '=nq^^=vKz?FRiz7-');
+$base = new PDO('mysql:host=localhost; dbname=cour_sn1', 'root@localhost');
 $base->exec("SET CHARACTER SET utf8");
 
 //2° - Préparation de requette et execution
